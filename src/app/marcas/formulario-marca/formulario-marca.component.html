@@ -1,0 +1,17 @@
+<p>formulario-marca works!</p>
+
+<form (submit)="guardarmarca()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre*</mat-label>
+        <input formControlName="nombre" matInput/>
+        <mat-error *ngIf="form.invalid">{{obtenerErrorCampoNombre()}}</mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-flat-button color="primary" [disabled]="form.invalid">
+            guardar cambios
+        </button>
+        <a mat-stroked-button routerLink="/marcas">cancelar
+        </a>
+    </div>
+
+</form>

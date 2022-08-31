@@ -1,0 +1,25 @@
+<app-listado-generico [listado]="portatiles">
+
+  <ng-container contenido>
+    <div class="portatiles-contenedor">
+      <div *ngFor="let portatil of portatiles;let index = index" class="portatil-contenedor">
+        <a><img [src]="portatil.poster" alt="Poster"></a>
+        <p>
+          <a>{{portatil.titulo}}</a>
+        </p>
+        <div>
+          <a mat-flat-button color="primary">editar</a>
+          <button mat-flat-button color="warn" type="button">borrar</button>
+        </div>
+      </div>
+      <!-- <div *ngFor="let portatil of portatiles;let index = index" class="portatiles-contenedor">
+      <div>
+        Portatil: {{index}}:{{portatil.marca }}<button style="margin-left:1rem;" (click)="remover(index)">remover</button>
+
+      </div>
+      <div>{{portatil.fechaLanzamiento | date:"dd-mm-yyyy"}}</div>
+      <div>{{portatil.precio | currency}}</div>
+    </div> -->
+    </div>
+  </ng-container>
+</app-listado-generico>
